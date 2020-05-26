@@ -1,0 +1,81 @@
+<header id="header" style="background :#FF4A12  ;width:100%;height: 80px;"></header>
+<div style="text-align: center;margin-top: 0px;margin-bottom: 0px;">
+<img  src="assets/img/logo/logo-mandados.png" alt="login">
+</div>
+<div style="text-align: center;">
+  <p>Registro nuevo usuario</p>
+</div>
+<form [formGroup]="frmSignup" (submit)="submit()">
+      <div class="form-group">
+          <label for="email" [ngClass]="frmSignup.controls['email'].invalid ? 'text-danger' : ''">Nombre de Usuario</label>
+          <input id="nombre" formControlName="nombre" type="text" class="form-control" pInputText placeholder="Nombre Completo" [(ngModel)]="usuarioModel.nombre"  [ngClass]="frmSignup.controls['nombre'].invalid ? 'is-invalid' : ''">
+          <label class="text-danger" *ngIf="frmSignup.controls['email'].hasError('required')">
+          </label>
+          <label class="text-danger" *ngIf="frmSignup.controls['email'].hasError('email')">
+           Se Requiere un nombre de usuario.
+          </label>
+        </div>
+  <div class="form-group">
+    <label for="email" [ngClass]="frmSignup.controls['email'].invalid ? 'text-danger' : ''">Correo Electronico</label>
+    <input id="email" formControlName="email" type="email" class="form-control" [(ngModel)]="usuarioModel.correo"  [ngClass]="frmSignup.controls['email'].invalid ? 'is-invalid' : ''">
+    <label class="text-danger" *ngIf="frmSignup.controls['email'].hasError('required')">
+      Se requiere un correo electronico.
+    </label>
+    <label class="text-danger" *ngIf="frmSignup.controls['email'].hasError('email')">
+    Ingresa un correo electronico valido.
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="password" [ngClass]="frmSignup.controls['password'].invalid ? 'text-danger' : ''">Contraseña:</label>
+    <input id="password" formControlName="password" type="password" class="form-control" [ngClass]="frmSignup.controls['password'].invalid ? 'is-invalid' : ''">
+    <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('minlength')  ? 'text-danger' : 'text-success'">
+      <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+        frmSignup.controls['password'].hasError('minlength') ? 'cancel' :
+        'check_circle' }}</i>
+Debe tener al menos 8 caracteres!
+    </label>
+    <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasNumber')  ? 'text-danger' : 'text-success'">
+      <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+        frmSignup.controls['password'].hasError('hasNumber') ? 'cancel' :
+        'check_circle' }}</i>
+Debe contener al menos 1 número!
+    </label>
+    <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasCapitalCase')  ? 'text-danger' : 'text-success'">
+      <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+        frmSignup.controls['password'].hasError('hasCapitalCase') ? 'cancel' :
+        'check_circle' }}</i>
+ Debe contener al menos 1 en mayúscula!
+    </label>
+    <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasSmallCase')  ? 'text-danger' : 'text-success'">
+      <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+        frmSignup.controls['password'].hasError('hasSmallCase') ? 'cancel' :
+        'check_circle' }}</i>
+        Debe contener al menos 1 letra en minúscula!
+    </label>
+    <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasSpecialCharacters') ? 'text-danger' : 'text-success'">
+      <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+        frmSignup.controls['password'].hasError('hasSpecialCharacters') ? 'cancel' :
+        'check_circle' }}</i>
+   Debe contener al menos 1 personaje especial!
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="confirmPassword" [ngClass]="frmSignup.controls['confirmPassword'].invalid ? 'text-danger' : ''">Confirmar Contraseña:</label>
+    <input id="confirmPassword"  [(ngModel)]="usuarioModel.contrasena" formControlName="confirmPassword" type="password" class="form-control"
+      [ngClass]="frmSignup.controls['confirmPassword'].invalid ? 'is-invalid' : ''">
+    <label class="text-danger" *ngIf="frmSignup.controls['confirmPassword'].hasError('required')">
+      Se requiere contraseña!
+    </label>
+    <label class="text-danger" *ngIf="frmSignup.controls['confirmPassword'].hasError('NoPassswordMatch')">
+   La contraseña no coincide
+    </label>
+  </div>
+  <div class="form-group">
+    <button [disabled]="frmSignup.invalid" type="submit" class="btn btn-primary btn-block font-weight-bold">Sign up</button>
+  </div>
+</form>
+<footer id="header" style="background : #FF4A12 ;width:100%;height: 50px;">
+    <div style="text-align: center;color: azure" >
+       <p style="font-size: 10px">2019 Copyright © Consulting & Freelance. Todos los derechos reservados.</p>
+    </div>
+</footer>

@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<p-card header="Advanced Card" subheader="Subheader" [style]="{width: '100%'}" styleClass="ui-card-shadow">
+  <div style="width: 100%; margin-top: 12px;">
+    <p-header>
+      <div style="width: 100%;text-align: center" >    
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages" ></ngx-gallery>
+      </div>
+    </p-header>
+  </div>
+  <div style="text-align: center;margin-top: 10px;">Lo que sea esta madre con su precio <br><br><p-rating [(ngModel)]="val3" [cancel]="false"></p-rating></div>
+  <div style="text-align: center; margin-top: 12px" >
+  <p-footer >
+      <div style="margin-top: 12px;">
+          <button pButton type="button" label="Comprar" icon="pi pi-money-bill" style="margin-right: .50em"></button>
+          <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+          <button type="button" (click)="confirm1()" pButton icon="pi pi-shopping-cart" label="Agregar a carrito"></button>
+          <p-messages [value]="msgs"></p-messages>
+      </div>
+  </p-footer>
+  </div>
+</p-card>
+<div class="ui-g">
+  <div class="ui-g-12 ui-md-4">
+      <p-scrollPanel [style]="{width: '100%', height: '200px'}">
+          <div style="padding:1em;line-height:1.5">
+             <p style="text-align: center;">Descripcion de producto super mamalona !</p>  
+          </div>
+      </p-scrollPanel>
+  </div>
+</div>
+<app-produtos></app-produtos>
+
+<app-footer></app-footer>

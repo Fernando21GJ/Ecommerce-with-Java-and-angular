@@ -1,0 +1,55 @@
+<app-menu></app-menu>
+
+<p-card>
+        <p-header>
+            
+        </p-header>
+        <div sytle="text-align: center">
+                
+                        
+                    <p-tabView>
+            
+                                <p-tabPanel header="Carrito" leftIcon ="pi pi-shopping-cart" [headerStyle]="{'width':'49%'}">
+                                    <p-scrollPanel [style]="{width: '100%', height: '200px'}">
+                                        <table>
+                                            <tr>
+                                                <td><img src="assets/img/miniatura/abi-min.png" alt="" width="80px"></td>
+                                                <td>
+                                                    <div>
+                                                        Nombre de la madre que estes comprando
+                                                    </div>
+                                                    <br>
+                                                    <div>
+                                                        <table>
+                                                            <tr>
+                                                                <td style="width: 200px;"> 
+                                                                        <p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Cantidad" optionLabel="name" [showClear]="true"></p-dropdown>
+                                                                        
+                                                                </td>
+                                                                <td style="width: 200px;">Total: {{cities*10}} </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>                                                     
+                                                </td>
+                                            </tr>
+                                        </table>
+                                            
+                                      
+                                    </p-scrollPanel>                       
+                                </p-tabPanel>
+                                <p-tabPanel header="Guardados" leftIcon="pi pi-save" [headerStyle]="{'width':'49%'}">
+                                    <p-scrollPanel [style]="{width: '100%', height: '200px'}">
+
+                                    </p-scrollPanel>  
+                                </p-tabPanel>
+                                </p-tabView>
+
+                    
+                
+                </div>
+        <p-footer>
+                <p-button  icon="pi pi-check" label="Continuar Compra"></p-button>
+        </p-footer>
+</p-card>
+    
+<app-footer></app-footer>

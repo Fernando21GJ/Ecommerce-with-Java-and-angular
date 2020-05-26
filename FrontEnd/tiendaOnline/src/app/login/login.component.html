@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <div class="login-box">
+            <div class="textbox">
+                <i class='fas fa-user' style='font-size:24px'></i>
+                <input id="input" type="text" size="30" pInputText [(ngModel)]="text" placeholder="Usuario">
+            </div>
+            <div class="textbox">
+                <i class="fas fa-lock" style='font-size:24px'></i>             
+                <input pPassword type="password" placeholder="Contraseña" size="30"/>
+            </div>
+            <div class="button_uno">
+                <button pButton type="button" label="Inicio Sesion" class="ui-button-raised ui-button-success" ></button>
+            </div>
+            <div class="button_dos">
+                <button pButton type="button" label="Registrarte" class="ui-button-raised"></button>
+            </div>
+        </div>
+    </body>
+</html>
